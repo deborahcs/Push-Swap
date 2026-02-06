@@ -1,38 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/23 13:06:01 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/06 11:45:22 by decabral         ###   ########.fr       */
+/*   Created: 2026/02/06 11:27:38 by decabral          #+#    #+#             */
+/*   Updated: 2026/02/06 13:22:40 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atol(char *str)
-{
-	int		i;
-	int		signal;
-	long	result;
-
-	i = 0;
-	signal = 1;
-	result = 0;
-	while (str[i] >= 9 && str[i] <= 13 || str[i] == ' ')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			signal *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * signal);
-}
