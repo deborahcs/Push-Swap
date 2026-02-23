@@ -6,15 +6,11 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:59:54 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/06 16:55:02 by decabral         ###   ########.fr       */
+/*   Updated: 2026/02/23 18:00:56 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// se n for int
-// se um dos args for maior que o int max/min
-// se houver args duplicados
 
 int	check_syntax(char **argv)
 {
@@ -42,9 +38,15 @@ int	check_syntax(char **argv)
 	return (1);
 }
 
-//int	check_overflow()
+int	check_overflow(long num)
+{
+	if (num > INT_MAX || num < INT_MIN)
+		return (0);
+	return (1);
+}
 
-int	check_dupli(t_stack_node *stack, int n)//recebe o inicio da lista e o num a ser visto
+
+int	check_dupli(t_stack_node *stack, int n)//recebe o ini da list e o num a ser visto 
 {
 	if (!stack)// se a stack estiver vazia, "ok"
 		return (1);
