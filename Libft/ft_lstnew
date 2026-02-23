@@ -1,0 +1,25 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    ft_lstnew                                          :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: decabral <decabral@student.42.rio>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/02/23 15:31:32 by decabral          #+#    #+#              #
+#    Updated: 2026/02/23 15:39:11 by decabral         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#include "libft.h"
+
+t_list *ft_lstnew(void *content)
+{
+    t_list  *new;
+
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content; 
+	new->next = NULL;
+	return (new);
+}
