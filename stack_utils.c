@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 13:06:01 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/06 11:45:22 by decabral         ###   ########.fr       */
+/*   Updated: 2026/02/25 16:06:25 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atol(char *str)
+void	free_stack(t_stack_node **stack)
 {
-	int		i;
-	int		signal;
-	long	result;
+	t_stack_node	*tmp;
+	t_stack_node	*current;
 
-	i = 0;
-	signal = 1;
-	result = 0;
-	while (str[i] >= 9 && str[i] <= 13 || str[i] == ' ')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	if (!stack || !(*stack))
+		return (0);
+	current = *stack;
+	while (current)
 	{
-		if (str[i] == '-')
-			signal *= -1;
-		i++;
+		tmp = current->next;
+		free (current);
+		current = tmp;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * signal);
+	*stack = NULL;
 }
