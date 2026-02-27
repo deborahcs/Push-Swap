@@ -6,62 +6,63 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:59:54 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/25 15:35:01 by decabral         ###   ########.fr       */
+/*   Updated: 2026/02/27 16:59:18 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_exit(void)
+void	error_exit(t_stack_node **a, char **matrix)
 {
+	if (a && *a)
+		free_stack(a);
+	if (matrix)
+		free_matrix(matrix);
 	write(2, "Error\n", 6);
 	exit(1);
 }
-int	check_syntax(char **argv)
+
+void	free_stack(t_stack_node **stack)
+{
+	t_stack_node	*tmp;
+	t_stack_node	*current;
+
+	if (!stack || !(*stack))
+		return ;
+	current = *stack;
+	while (current)
+	{
+		tmp = current->next;
+		free (current);
+		current = tmp;
+	}
+	*stack = NULL;
+}
+
+void	free_matrix(char **matrix)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	while (argv[i])
+	if (!matrix)
+		return ;
+	while (matrix[i])
 	{
-		j = 0;
-		if (argv[i][j] == '-' || argv[i][j] == '+')
-		{
-			j++;
-			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
-				error_exit();
-		}
-		while (argv[i][j])
-		{
-			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
-				error_exit();
-			j++;
-		}
+		free(matrix[i]);
 		i++;
 	}
-	return (1);
+	free(matrix);
 }
 
-int	check_overflow(long num)
+bool	is_stack_sorted(t_stack_node *stack)
 {
-	if (num > INT_MAX || num < INT_MIN)
-		error_exit();
-	return (1);
-}
-
-
-int	check_dupli(t_stack_node *stack, int n)//recebe o ini da list e o num a ser visto 
-{
-	if (!stack)// se a stack estiver vazia, "ok"
-		return (1);
-	while (stack)//enquanto a stack for válida
+	if (!stack)
+		return (true);
+	while (stack->next)
 	{
-		if (stack->nbr == n) // o num na lista é o num que esta sendo testado?
-			error_exit();
-		stack = stack->next; // vamos ver o proximo 
+		if (stack->nbr > stack->next->nbr)
+			return (false);
+		stack = stack->next;
 	}
-	return (1);
+	return (true);
 }
-
-

@@ -7,7 +7,7 @@ FUNCTIONS =
 OBJ = $(FUNCTIONS:.c=.o)
 
 .c.o:
-	$(CC) $(FLAG) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 all: $(LIBFT) $(NAME)
 
@@ -15,7 +15,7 @@ $(LIBFT)
 	make -C libft
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(FLAGS) $(OBJ) $(LIBFT)-o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)
