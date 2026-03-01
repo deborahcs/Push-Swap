@@ -1,8 +1,20 @@
 CC = cc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -I.
 NAME = push_swap
 LIBFT = libft/libft.a
-FUNCTIONS = 
+
+FUNCTIONS = push_swap.c \
+	stack_utils.c \
+	checks.c \
+	errors.c \
+    turk/analysing.c \
+	turk/movimentation.c \
+	operations/sort_stacks.c \
+    operations/push.c \
+	operations/rotate.c \
+	operations/rev_rotate.c \
+    operations/swap.c \
+	operations/sort_three.c
 
 OBJ = $(FUNCTIONS:.c=.o)
 
@@ -11,7 +23,7 @@ OBJ = $(FUNCTIONS:.c=.o)
 
 all: $(LIBFT) $(NAME)
 
-$(LIBFT)
+$(LIBFT):
 	make -C libft
 
 $(NAME): $(OBJ) $(LIBFT)
