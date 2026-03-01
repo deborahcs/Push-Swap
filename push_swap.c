@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:52:46 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/27 15:58:30 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/01 00:55:03 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,21 @@ static void	stack_init(t_stack_node **a, char **matrix)
 	}
 }
 
+static void sorting(t_stack_node **a, t_stack_node **b)
+{
+	int	size;
+	
+	if (is_stack_sorted(*a))
+		return ;
+	size = ft_lstsize(*a);
+	if (size == 2)
+		sa(a, 1);
+	else if (size == 3)
+		sort_three(a);
+	else
+		sort_stacks(a, b);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
@@ -38,16 +53,16 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc == 1 || argc == 2 && !argv[1][0])
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	else
 		argv++;
 	stack_init(&a, argv);
-
-
+	sorting(&a, &b);
 	free_stack(&a);
 	if (argc == 2)
 		free_matrix(argv);
+	return (0);
 }
