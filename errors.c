@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:59:54 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/27 16:59:18 by decabral         ###   ########.fr       */
+/*   Updated: 2026/02/28 23:44:46 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,4 @@ void	free_matrix(char **matrix)
 		i++;
 	}
 	free(matrix);
-}
-
-bool	is_stack_sorted(t_stack_node *stack)
-{
-	if (!stack)
-		return (true);
-	while (stack->next)
-	{
-		if (stack->nbr > stack->next->nbr)
-			return (false);
-		stack = stack->next;
-	}
-	return (true);
 }

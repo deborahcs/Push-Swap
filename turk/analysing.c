@@ -6,13 +6,13 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:40:00 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/27 16:59:13 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/01 20:23:44 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
+void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 {
 	int	size_a;
 	int	size_b;
@@ -41,9 +41,10 @@ void	set_cheapest(t_stack_node *stack)
 	if (!stack)
 		return ;
 	cheapest_value = LONG_MAX;
-	cheapest_node = NULL;
+	cheapest = NULL;
 	while (stack)
 	{
+		stack->cheapest = false;
 		if (stack->push_cost < cheapest_value)
 		{
 			cheapest_value = stack->push_cost;
@@ -54,7 +55,7 @@ void	set_cheapest(t_stack_node *stack)
 	cheapest_node->cheapest = true;
 }
 
-static void	set_target_a(t_stack_node *a, t_stack_node *b)
+void	set_target_a(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_b;
 	t_stack_node	*target_node;
@@ -81,7 +82,7 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-static void	set_target_b(t_stack_node *a, t_stack_node *b)
+void	set_target_b(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_a;
 	t_stack_node	*target_node;
@@ -108,23 +109,15 @@ static void	set_target_b(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-void	current_position(t_stack_node *stack)
+t_stack_node	*get_cheapest(t_stack_node *stack)
 {
-	int	i;
-	int	median;
-
-	i = 0;
 	if (!stack)
-		return ;
-	median = ft_lstsize(stack) / 2;
+		return (NULL);
 	while (stack)
 	{
-		stack->index = i;
-		if (i <= median)
-			stack->above_median = true;
-		else
-			stack->above_median = false;
+		if (stack->cheapest)
+			return (stack);
 		stack = stack->next;
-		i++;
 	}
+	return (NULL);
 }

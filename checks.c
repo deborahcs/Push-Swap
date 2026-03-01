@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 14:01:15 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/27 16:59:17 by decabral         ###   ########.fr       */
+/*   Updated: 2026/02/28 23:44:57 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,17 @@ int	check_dupli(t_stack_node *stack, int n)
 		stack = stack->next;
 	}
 	return (1);
+}
+
+bool	is_stack_sorted(t_stack_node *stack)
+{
+	if (!stack)
+		return (true);
+	while (stack->next)
+	{
+		if (stack->nbr > stack->next->nbr)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
 }

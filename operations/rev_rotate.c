@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 11:47:52 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/27 12:02:35 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/01 01:15:38 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ void	rra(t_stack_node **a, int print)
 	rev_rotate(a);
 	if (print)
 		write(1, "rra\n", 4);
+}
+
+void	rrb(t_stack_node **b, int print)
+{
+	rev_rotate(b);
+	if (print)
+		write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack_node **a, t_stack_node **b)

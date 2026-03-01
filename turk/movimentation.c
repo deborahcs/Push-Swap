@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:39:27 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/27 17:04:26 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/01 00:10:57 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,3 +80,25 @@ void	min_on_top(t_stack_node **a)
 			rra(a, 1);
 	}
 }
+
+void	current_position(t_stack_node *stack)
+{
+	int	i;
+	int	median;
+
+	i = 0;
+	if (!stack)
+		return ;
+	median = ft_lstsize(stack) / 2;
+	while (stack)
+	{
+		stack->index = i;
+		if (i <= median)
+			stack->above_median = true;
+		else
+			stack->above_median = false;
+		stack = stack->next;
+		i++;
+	}
+}
+
