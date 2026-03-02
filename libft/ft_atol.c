@@ -6,11 +6,11 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:06:37 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/23 15:27:07 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 14:47:58 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atol(char *str)
+long	ft_atol(const char *str)
 {
 	int		i;
 	int		signal;

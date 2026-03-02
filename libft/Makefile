@@ -1,5 +1,5 @@
 COMP = cc
-FLAG = -Wall -Wextra -Werror
+FLAG = -g -Wall -Wextra -Werror
 NAME = libft.a
 FUNCTIONS = ft_isalpha.c \
 	ft_isdigit.c \

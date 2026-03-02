@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 14:01:15 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/28 23:44:57 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 14:12:34 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	check_syntax(char **argv)
 	while (argv[i])
 	{
 		j = 0;
+		if (argv[i][j] == '\0')
+			return (0);
 		if (argv[i][j] == '-' || argv[i][j] == '+')
 		{
 			j++;
