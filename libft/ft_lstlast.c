@@ -6,15 +6,15 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 19:28:20 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/01 19:29:01 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 08:54:56 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_stack_node *ft_lstlast(t_stack_node *lst)
 {
-	t_list	*tmp;
+	t_stack_node	*tmp;
 
 	if (!lst)
 		return (NULL);

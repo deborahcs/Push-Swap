@@ -6,16 +6,16 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 19:36:39 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/01 19:39:19 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 08:55:12 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_stack_node *ft_lstmap(t_stack_node *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *new_list;
-	t_list *new_obj;
+	t_stack_node *new_list;
+	t_stack_node *new_obj;
 
 	if (!lst || !f || !del)
 		return (NULL);

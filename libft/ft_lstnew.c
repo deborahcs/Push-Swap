@@ -6,17 +6,17 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 19:23:08 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/01 19:25:27 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 08:55:26 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_stack_node	*ft_lstnew(void *content)
 {
-    t_list  *new;
+    t_stack_node  *new;
 
-	new = malloc(sizeof(t_list));
+	new = malloc(sizeof(t_stack_node));
 	if (!new)
 		return (NULL);
 	new->content = content; 
