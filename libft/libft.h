@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 10:53:57 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/02 08:53:32 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 08:59:59 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 t_stack_node	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-int		ft_lstsize(t_list *lst);
+void	ft_lstadd_front(t_stack_node **lst, t_stack_node *new);
+int		ft_lstsize(t_stack_node *lst);
 t_stack_node	*ft_lstlast(t_stack_node *lst);
 void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new);
 void	ft_lstdelone(t_stack_node *lst, void (*del)(void *));
