@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:39:27 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/01 00:10:57 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 09:59:52 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,3 @@ void	current_position(t_stack_node *stack)
 		i++;
 	}
 }
-

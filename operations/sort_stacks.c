@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 23:28:04 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/01 00:08:56 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 11:36:34 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ static void	init_node_b(t_stack_node *a, t_stack_node *b)
 	set_target_b(a, b);
 }
 
-void    sort_stacks(t_stack_node **a, t_stack_node **b)
+void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
-    int size_a;
-    
-    size_a = ft_lstsize(*a);
-    if (size_a > 3 && !is_stack_sorted(*a))
+	int	size_a;
+
+	size_a = ft_lstsize(*a);
+	if (size_a > 3 && !is_stack_sorted(*a))
 		pb(b, a, 1);
 	if (size_a > 4 && !is_stack_sorted(*a))
 		pb(b, a, 1);
-	while (ft_lstsize(*a) > 3 && !is_stack_sorted(*a))
+	while (ft_lstsize(*a) > 3 )
 	{
 		init_node_a(*a, *b);
 		move_a_to_b(a, b);

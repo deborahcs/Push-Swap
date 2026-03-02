@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 17:43:30 by decabral          #+#    #+#             */
-/*   Updated: 2025/11/07 13:05:58 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 09:55:16 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!new)
 		return (NULL);
 	while (s1[i])
-	{	
+	{
 		new[i] = s1[i];
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 11:27:38 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/27 12:02:32 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 09:58:48 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	sa(t_stack_node **a, int print)
 	first->prev = second;
 	*a = second;
 	if (print)
-		write(1, "sa\n", 3);  
+		write(1, "sa\n", 3);
 }
 
 void	sb(t_stack_node **b, int print)

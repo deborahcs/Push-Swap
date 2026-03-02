@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:26:00 by decabral          #+#    #+#             */
-/*   Updated: 2025/11/10 14:26:03 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 09:55:00 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	count_words(char const *s, char c)
 		while (s[i] == c)
 			i++;
 		if (s[i] != c && s[i])
-		{	
+		{
 			count++;
 			while (s[i] != c && s[i])
 				i++;
@@ -74,7 +74,7 @@ static char	**fill_matrix(char const *s, char c, char **matrix, int total_words)
 			return (free_matrix(matrix, i));
 		j += len_words;
 		i++;
-	}	
+	}
 	matrix[i] = (NULL);
 	return (matrix);
 }

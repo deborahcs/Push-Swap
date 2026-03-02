@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 19:27:04 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/02 08:56:59 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 09:41:07 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 int	ft_lstsize(t_stack_node *lst)
 {
 	t_stack_node	*tmp;
-	int	i;
+	int				count;
 
+	count = 0;
 	tmp = lst;
-	i = 0;
 	while (tmp)
 	{
 		tmp = tmp -> next;
-		i++;
+		count++;
 	}
-	return (i);
+	return (count);
 }

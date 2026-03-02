@@ -6,12 +6,11 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 11:47:52 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/01 01:15:38 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 09:57:47 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 static void	rev_rotate(t_stack_node **stack)
 {

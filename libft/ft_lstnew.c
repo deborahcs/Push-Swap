@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 19:23:08 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/02 08:55:26 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 09:20:57 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 t_stack_node	*ft_lstnew(void *content)
 {
-    t_stack_node  *new;
+	t_stack_node	*new;
 
-	new = malloc(sizeof(t_stack_node));
+	new = (t_stack_node *)malloc(sizeof(t_stack_node));
 	if (!new)
 		return (NULL);
-	new->content = content; 
+	new->nbr = (int)(long)content;
 	new->next = NULL;
+	new->prev = NULL;
 	return (new);
 }

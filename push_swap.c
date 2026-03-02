@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:52:46 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/01 00:55:03 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 09:53:24 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ static void	stack_init(t_stack_node **a, char **matrix)
 	}
 }
 
-static void sorting(t_stack_node **a, t_stack_node **b)
+static void	sorting(t_stack_node **a, t_stack_node **b)
 {
 	int	size;
-	
+
 	if (is_stack_sorted(*a))
 		return ;
 	size = ft_lstsize(*a);
@@ -49,7 +49,6 @@ int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
-
 
 	a = NULL;
 	b = NULL;

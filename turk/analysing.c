@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:40:00 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/01 20:23:44 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/02 09:59:32 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 
 	size_a = ft_lstsize(a);
 	size_b = ft_lstsize(b);
-
 	while (a)
 	{
 		a->push_cost = a->index;
@@ -41,7 +40,7 @@ void	set_cheapest(t_stack_node *stack)
 	if (!stack)
 		return ;
 	cheapest_value = LONG_MAX;
-	cheapest = NULL;
+	cheapest_node = NULL;
 	while (stack)
 	{
 		stack->cheapest = false;
