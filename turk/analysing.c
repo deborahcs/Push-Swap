@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:40:00 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/02 09:59:32 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/03 12:02:13 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 	int	size_a;
 	int	size_b;
 
-	size_a = ft_lstsize(a);
-	size_b = ft_lstsize(b);
+	size_a = lstsize(a);
+	size_b = lstsize(b);
 	while (a)
 	{
 		a->push_cost = a->index;

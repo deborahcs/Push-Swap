@@ -6,11 +6,26 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 13:06:01 by decabral          #+#    #+#             */
-/*   Updated: 2026/02/27 16:36:24 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/03 15:54:44 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	lstsize(t_stack_node *lst)
+{
+	t_stack_node	*tmp;
+	int				count;
+
+	count = 0;
+	tmp = lst;
+	while (tmp)
+	{
+		tmp = tmp -> next;
+		count++;
+	}
+	return (count);
+}
 
 t_stack_node	*find_max(t_stack_node *stack)
 {

@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 23:28:04 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/02 14:54:30 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/03 12:03:08 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
 	int	size_a;
 
-	size_a = ft_lstsize(*a);
+	size_a = lstsize(*a);
 	if (size_a > 3)
 		pb(b, a, 1);
 	if (size_a > 4)
 		pb(b, a, 1);
-	while (ft_lstsize(*a) > 3)
+	while (lstsize(*a) > 3)
 	{
 		init_node_a(*a, *b);
 		move_a_to_b(a, b);

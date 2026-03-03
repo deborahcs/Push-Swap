@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:39:27 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/02 09:59:52 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/03 12:02:40 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	current_position(t_stack_node *stack)
 	i = 0;
 	if (!stack)
 		return ;
-	median = ft_lstsize(stack) / 2;
+	median = lstsize(stack) / 2;
 	while (stack)
 	{
 		stack->index = i;

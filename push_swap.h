@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:53:50 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/02 15:18:28 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/03 15:47:36 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void			rrb(t_stack_node **b, int print);
 void			rrr(t_stack_node **a, t_stack_node **b);
 
 /* Utilidades de Pilha (stack_utils.c) */
-int				ft_lstsize(t_stack_node *lst);
+int				lstsize(t_stack_node *lst);
 t_stack_node	*find_max(t_stack_node *stack);
 t_stack_node	*find_min(t_stack_node *stack);
 t_stack_node	*find_last(t_stack_node *stack);

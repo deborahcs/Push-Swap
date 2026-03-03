@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 10:53:57 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/02 14:48:41 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/03 15:51:22 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ typedef struct s_stack_node
 	bool				above_median;
 	bool				cheapest;
 	struct s_stack_node	*target_node;
-	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
+	struct s_stack_node	*prev;
 }	t_stack_node;
 
 int		ft_isalpha(int c);
@@ -51,7 +51,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
-long		ft_atol(const char *str);
+long	ft_atol(const char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -65,14 +65,5 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-void	ft_lstadd_front(t_stack_node **lst, t_stack_node *new);
-int		ft_lstsize(t_stack_node *lst);
-void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new);
-void	ft_lstdelone(t_stack_node *lst, void (*del)(void *));
-void	ft_lstclear(t_stack_node **lst, void (*del)(void *));
-void	ft_lstiter(t_stack_node *lst, void (*f)(void *));
-t_stack_node	*ft_lstnew(void *content);
-t_stack_node	*ft_lstlast(t_stack_node *lst);
-t_stack_node	*ft_lstmap(t_stack_node *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

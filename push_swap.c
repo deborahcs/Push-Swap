@@ -6,7 +6,7 @@
 /*   By: decabral <decabral@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:52:46 by decabral          #+#    #+#             */
-/*   Updated: 2026/03/02 15:23:29 by decabral         ###   ########.fr       */
+/*   Updated: 2026/03/03 12:01:30 by decabral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	sorting(t_stack_node **a, t_stack_node **b)
 
 	if (is_stack_sorted(*a))
 		return ;
-	size = ft_lstsize(*a);
+	size = lstsize(*a);
 	if (size == 2)
 		sa(a, 1);
 	else if (size == 3)
